@@ -28,12 +28,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {   
-        return view('employee.index',[ 'all' => User::all()]);
-    }
-
-    public function Menu(User $list)
-    {
-        return $list->UserList();
+        return view('employee.index',['all'=> User::all()]);
     }
 
     /**
