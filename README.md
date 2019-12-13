@@ -2,6 +2,13 @@
 
 1. Clone this app from url: https://github.com/nileshmailbook/testemployee.git
 2. create .ENV file with your db credential.
+
+	//for cache issue
+
+	set env variable =>  SESSION_DRIVER=database
+
+	set env variable => CACHE_DRIVER=database
+
 3. run following
 
 ```bash
@@ -54,3 +61,5 @@ use route middleware for prevent user for unthorised access.
 use of default service provider.
 
 use of service provider for user list generation
+
+
