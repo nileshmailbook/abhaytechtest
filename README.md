@@ -25,13 +25,23 @@ php artisan migrate --seed
 ## Integration
 
 use of middleware to check user have certain role or permission.
+
 use of server side validation for values.
+
 use of migration modifier.
+
 use of request filter for validation.
+
 use of resouce controllers.
+
 use of eloquent for queries.
+
 use of control statement in blade files.
+
 use of auth facades for authentication.
+
 use of contract while checking user role.
+
 use route middleware for prevent user for unthorised access.
+
 use of default service provider.
