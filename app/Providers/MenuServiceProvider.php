@@ -13,7 +13,7 @@ class MenuServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
+    {           
         $this->app->bind('App\Services\UserList',function ($app) {
             return new UserList();
         });
