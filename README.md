@@ -52,3 +52,5 @@ use of contract while checking user role.
 use route middleware for prevent user for unthorised access.
 
 use of default service provider.
+
+use of service provider for user list generation

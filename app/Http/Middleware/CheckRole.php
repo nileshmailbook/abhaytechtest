@@ -15,12 +15,15 @@ class CheckRole
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {   
-        if(Auth::user()->role != 'Admin' || Auth::user()->role != 'admin'){
-            return redirect('home')->with('error' , 'You are not authorised to access!');            
-        }
-        else{
+    {  
+        if(Auth::user()->role == 'admin'){
             return $next($request);
+                       
         }
+        else{            
+            return redirect()->back()->with('error','You are not authorised to access!'); 
+        }
+
+
     }
 }
