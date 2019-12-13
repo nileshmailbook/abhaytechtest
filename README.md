@@ -15,12 +15,19 @@ php artisan migrate --seed
 5. start your app using development server http://localhost:8000/
 
 6. use default creadential for admin and employee
+
 	//admin login
+
 	username :admin@admin.com
+
 	password : password
+
 	//employee login
+
 	username : employee1@gmail.com
+
 	password : employee1
+	
 
 ## Integration
 
