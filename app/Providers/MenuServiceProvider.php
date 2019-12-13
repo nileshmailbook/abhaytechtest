@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\User;
+use App\Services\UserList;
 
 class MenuServiceProvider extends ServiceProvider
 {
@@ -14,7 +14,7 @@ class MenuServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App/User',function ($app) {
+        $this->app->bind('App\Services\UserList',function ($app) {
             return new UserList();
         });
     }

@@ -13,6 +13,7 @@ use App\Http\Requests\AddressRequest;
 use App\Http\Requests\SalaryRequest;
 use App\Http\Requests\DesignationRequest;
 use App\Http\Requests\RoleRequest;
+use App\Services\UserList;
 
 class EmployeeController extends Controller
 {   
@@ -26,9 +27,10 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(UserList $list)
     {   
-        return view('employee.index',['all'=> User::all()]);
+        
+        return view('employee.index',['all'=> $list->items() ]);
     }
 
     /**
