@@ -1,6 +1,10 @@
 ## Installation
 
-1. Clone this app from url: https://github.com/nileshmailbook/testemployee.git
+1. Clone this app from url: https://github.com/nileshmailbook/abhaytechtest.git
+
+```bash
+git clone https://github.com/nileshmailbook/abhaytechtest.git
+```
 2. create .ENV file with your db credential.
 
 	//for cache issue
