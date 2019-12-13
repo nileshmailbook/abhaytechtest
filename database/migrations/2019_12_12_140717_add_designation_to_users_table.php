@@ -14,6 +14,9 @@ class AddDesignationToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('mobile');
+            $table->string('salary')->nullable();
+            $table->longText('adress')->nullable();
             $table->string('designation');
             $table->string('role');
         });
@@ -27,8 +30,12 @@ class AddDesignationToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('mobile');
+            $table->string('salary')->nullable();
+            $table->longText('adress')->nullable();
             $table->string('designation');
             $table->string('role');
+
         });
     }
 }

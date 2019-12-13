@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateRequest;
+use App\Http\Requests\NameRequest;
+use App\Http\Requests\EmailRequest;
+use App\Http\Requests\MobileRequest;
+use App\Http\Requests\PasswordRequest;
+use App\Http\Requests\AddressRequest;
+use App\Http\Requests\SalaryRequest;
+use App\Http\Requests\DesignationRequest;
+use App\Http\Requests\RoleRequest;
 
 class EmployeeController extends Controller
 {   
     public function __construct()
     {
-        $this->middleware(['auth','checkRole']);
+        $this->middleware(['auth','checkrole']);
     }
 
     /**
@@ -28,7 +37,7 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         return view('employee.create');
     }
 
@@ -73,10 +82,45 @@ class EmployeeController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request,$id)
+    public function updateName(NameRequest $request,$id)
     {
         User::findOrFail($id)->fill($request->all())->save();
-        return redirect()->back()->with('status','employee updated');
+        return redirect()->back()->with('status','Name updated');
+    }
+    public function updateEmail(EmailRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','Email updated');
+    }
+    public function updatePassword(PasswordRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','password updated');
+    }
+    public function updateSalary(SalaryRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','salary updated');
+    }
+    public function updateMobile(MobileRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','Mobile updated');
+    }
+    public function updateAddress(AddressRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','Address updated');
+    }
+    public function updateRole(RoleRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','role updated');
+    }
+    public function updateDesignation(DesignationRequest $request,$id)
+    {
+        User::findOrFail($id)->fill($request->all())->save();
+        return redirect()->back()->with('status','designation updated');
     }
 
     /**

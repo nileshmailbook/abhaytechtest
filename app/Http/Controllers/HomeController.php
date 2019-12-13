@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth','checkRole']);
+        $this->middleware('auth');
     }
 
     /**
@@ -22,7 +24,14 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        if(Auth::user()->role == 'Admin' || Auth::user()->role == 'admin'){
+            return view('employee.index',['all'=> User::all()]);           
+        }
+        else{
+           return view('home');
+        }
+
+         
     }
 }
